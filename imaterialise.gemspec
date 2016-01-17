@@ -19,6 +19,8 @@ Gem::Specification.new do |s|
                 "README.md"]
   s.test_files = Dir["spec/**/*"]
 
+  s.add_runtime_dependency "rest_client"
+
   s.add_development_dependency "webmock"
   s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
