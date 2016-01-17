@@ -1,5 +1,6 @@
+# Settings for connecting to the API.
 module Imaterialise
-  # Settings for the API.
+  # Container for configuration settings.
   class Configuration
     attr_accessor :api_code
     attr_accessor :tool_id

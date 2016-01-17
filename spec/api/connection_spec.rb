@@ -17,13 +17,13 @@ module Imaterialise
             "fileUrl" => "http://example.com/foo.stl",
             "forceEmbedding" => "false",
             "plugin" => "test-tool-id",
-            "useAjax" => "true"
+            "useAjax" => "true",
           }
           expected_headers = {
-            "Accept" => "application/json"
+            "Accept" => "application/json",
           }
           response_headers = {
-            "Location" => "http://i.materialise.com/foo.stl"
+            "Location" => "http://i.materialise.com/foo.stl",
           }
 
           stub_request(:post, "https://imatsandbox.materialise.net/upload")
