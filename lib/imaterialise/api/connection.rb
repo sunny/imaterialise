@@ -9,20 +9,9 @@ module Imaterialise
 
       def post(model)
         url = "#{API.host}/upload"
+        body = post_body(model)
 
-        body = {
-          useAjax: true,
-          forceEmbedding: false,
-          plugin: Imaterialise.configuration.tool_id,
-          fileUrl: model.file_url,
-          currency: model.currency.upcase,
-        }
-
-        headers = {
-          accept: :json
-        }
-
-        RestClient.post(url, body, headers) do |response, _request, _result|
+        RestClient.post(url, body, accept: :json) do |response, _, _|
           case response.code
           when 302
             { url: response.headers[:location] }
@@ -30,6 +19,16 @@ module Imaterialise
             fail APIError.new(response.code, response.body)
           end
         end
+      end
+
+      def post_body(model)
+        {
+          useAjax: true,
+          forceEmbedding: false,
+          plugin: Imaterialise.configuration.tool_id,
+          fileUrl: model.file_url,
+          currency: model.currency.upcase,
+        }
       end
     end
   end
