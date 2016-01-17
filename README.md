@@ -34,7 +34,7 @@ Install
 Add the following line to your Gemfile if you are using the `bundler` gem:
 
 ```rb
-gem "imaterialise", github: "sunny/imaterialise"
+gem "imaterialise"
 ```
 
 
