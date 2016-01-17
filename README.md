@@ -19,10 +19,10 @@ Usage
 ### 3D Print Lab Connection
 
 ```rb
-model = Imaterialise::Connection.new(file_url: "/path/to/example.stl"),
-                                     currency: "eur")
-model.upload
-model.url # => "http://i.materialise.com/UploadRouter?modelID=1234-5678-1234-1…"
+connection = Imaterialise::Connection.new(file_url: "/path/to/example.stl",
+                                          currency: "eur")
+connection.upload
+connection.url # => "http://i.materialise.com/UploadRouter?modelID=1234-5678-1…"
 ```
 
 You can redirect your users to the given URL.
