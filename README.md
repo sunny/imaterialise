@@ -31,9 +31,10 @@ You can redirect your users to the given URL.
 Install
 -------
 
-Add the following line to your Gemfile if you are using the `bundler` gem:
+Add the following lines to your Gemfile if you are using bundler:
 
 ```rb
+# Send 3D files to i.materialise's API
 gem "imaterialise"
 ```
 
